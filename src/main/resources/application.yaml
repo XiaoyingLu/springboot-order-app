@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/orderdb
+    username: postgres
+    password: root
+  sql:
+    init:
+#      schema-locations: classpath:/schema.sql
+#      mode: always
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgresSQLDialect
+      ddl-auto: create
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+springdoc:
+  packages-to-scan: com.springboot.springorderapp
+  paths-to-match: /v1, /api/**
